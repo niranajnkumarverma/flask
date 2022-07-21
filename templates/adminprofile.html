@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Admin Profile</title>
+		
+	</head>
+	<body>
+		<nav class="navtop">
+			<div>
+				
+
+                <a href="{{ url_for('home') }}"><i class="fas fa-home"></i>Home</a>
+				<a href="{{ url_for('profile') }}"><i class="fas fa-user-circle"></i>Profile </a>
+
+				<a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
+			</div>
+		</nav>
+		<div align = "center">
+			<table class="table" style="margin-left: 30px;">
+				<tr>
+					<th colspan="4" class="head" style="text-align: center; font-size: 300%">Dashboard</th>
+				</tr><br><br><br>
+				<tr>
+					<th>ID</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th colspan="2">Action</th>
+				</tr>
+				{% for x in user %}
+					
+					<tr class="row">
+						<td>{{ x.id }}</td>
+						<td>{{ x.username }}</td>
+						<td>{{ x.email }}</td>
+						<td><a href="/adupdate/{{x.id}}">Update</a></td>
+						<td><a href="/addelete/{{x.id}}">Delete</a></td>
+					</tr>
+					{% endfor %}
+				</table>
+
+		</div>
+
+	</body>
+</html>

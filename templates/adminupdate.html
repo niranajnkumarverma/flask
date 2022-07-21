@@ -1,0 +1,23 @@
+{% from "validation.html" import render_field %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update</title>
+</head>
+<body style="background-color:powderblue;">
+<center>
+   <h1>Update Profile</h1><br>
+   <form method="post" action="/adupdate/{{user.id}}">
+      <dl>
+       {{ form.hidden_tag() }}<br><br>
+       {{ render_field(form.username) }}<br><br>
+       {{ render_field(form.email) }}<br><br>
+       {{ render_field(form.password) }}<br><br>
+       {{ render_field(form.confpass) }}<br><br>
+       {{ render_field(form.submit) }}
+      </dl>
+   </form><br><br>
+</center>
+</body>
+</html>
